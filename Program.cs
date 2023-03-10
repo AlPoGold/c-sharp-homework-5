@@ -22,21 +22,21 @@
 
 // [-4, -6, 89, 6] -> 0
 
-Console.Write("Please, enter size of your array: ");
-int size = int.Parse(Console.ReadLine()!);
-int[] myArray = new int[size];
-int sum = 0;
-var rand = new Random();
-for(int i = 0; i < size; i++)
-{
-    myArray[i] = rand.Next(-100, 101);
-    if (i%2 == 1) sum += myArray[i];
+// Console.Write("Please, enter size of your array: ");
+// int size = int.Parse(Console.ReadLine()!);
+// int[] myArray = new int[size];
+// int sum = 0;
+// var rand = new Random();
+// for(int i = 0; i < size; i++)
+// {
+//     myArray[i] = rand.Next(-100, 101);
+//     if (i%2 == 1) sum += myArray[i];
 
     
-}
-Console.Write($"Your array is {String.Join(", ", myArray)} ");
-Console.WriteLine();
-Console.WriteLine($"The summary of numbers on odd position in your array {sum}");
+// }
+// Console.Write($"Your array is {String.Join(", ", myArray)} ");
+// Console.WriteLine();
+// Console.WriteLine($"The summary of numbers on odd position in your array {sum}");
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
