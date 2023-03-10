@@ -22,22 +22,46 @@
 
 // [-4, -6, 89, 6] -> 0
 
-Console.Write("Please, enter size of your array: ");
-int size = int.Parse(Console.ReadLine());
-int[] myArray = new int[size];
-int sum = 0;
+// Console.Write("Please, enter size of your array: ");
+// int size = int.Parse(Console.ReadLine()!);
+// int[] myArray = new int[size];
+// int sum = 0;
 
-for(int i = 0; i < size; i++)
-{
-    myArray[i] = new Random().Next();
-    if (i%2 == 1) sum += myArray[i];
+// for(int i = 0; i < size; i++)
+// {
+//     myArray[i] = new Random().Next(1, 100);
+//     if (i%2 == 1) sum += myArray[i];
 
     
-}
-Console.Write($"Your array is {String.Join(", ", myArray)} ");
-Console.WriteLine();
-Console.WriteLine($"The summary of numbers on odd position in your array {sum}");
+// }
+// Console.Write($"Your array is {String.Join(", ", myArray)} ");
+// Console.WriteLine();
+// Console.WriteLine($"The summary of numbers on odd position in your array {sum}");
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 // [3 7 22 2 78] -> 76
+
+double[] ReturnFloatArray(int size)
+{
+    var rand = new Random();
+    double[] myArray = new double[size];
+    for (int i = 0; i < size; i++) myArray[i] = Math.Round((rand.NextDouble() * rand.Next(1, 1000)), 2);
+    return myArray;
+}
+
+
+Console.Write("Please, enter size of your array: ");
+int size = int.Parse(Console.ReadLine()!);
+double[] randomArray = ReturnFloatArray(size);
+Console.WriteLine($"{String.Join("  ", randomArray)}");
+
+double max = randomArray[0];
+double min = randomArray[0];
+
+foreach (double x in randomArray)
+{
+    if (x > max) max = x;
+    if (x < min) min = x;
+}
+Console.WriteLine($"Difference between maximum {max} and minumum {min} equals {max - min}");
